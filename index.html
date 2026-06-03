@@ -206,49 +206,6 @@
     color: var(--text-muted);
     font-size: 15px;
   }
-  .chrome-actions {
-    margin-left: auto;
-    display: flex;
-    gap: 8px;
-    align-items: center;
-  }
-
-  /* Search input in chrome */
-  .chrome-search {
-    position: relative;
-    display: flex;
-    align-items: center;
-  }
-  .chrome-search svg {
-    position: absolute;
-    left: 12px;
-    width: 13px;
-    height: 13px;
-    color: var(--text-soft);
-    pointer-events: none;
-  }
-  .chrome-search input {
-    height: 32px;
-    width: 200px;
-    padding: 0 14px 0 32px;
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    background: var(--bg-card);
-    color: var(--text);
-    font-family: inherit;
-    font-size: 13px;
-    line-height: 1;
-    outline: none;
-    transition: width 0.18s ease, border-color 0.12s ease, background 0.12s ease;
-  }
-  .chrome-search input::placeholder { color: var(--text-soft); }
-  .chrome-search input:hover { border-color: var(--border-strong); }
-  .chrome-search input:focus {
-    width: 280px;
-    border-color: var(--text-soft);
-    background: var(--bg-card);
-  }
-
   /* ---------- Layout ---------- */
   main {
     max-width: 920px;
@@ -641,8 +598,6 @@
     .chrome-inner { padding: 12px 16px; gap: 10px; }
     .frontmatter { grid-template-columns: 1fr; gap: 4px; }
     .fm-key { margin-top: 8px; }
-    .chrome-search input { width: 140px; }
-    .chrome-search input:focus { width: 180px; }
     .card { padding: 20px; }
   }
 </style>
@@ -656,15 +611,6 @@
     <div class="claude-mark"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Claude_AI_logo.svg/3840px-Claude_AI_logo.svg.png" alt="Claude" /></div>
     <span class="chrome-sep">/</span>
     <span class="chrome-crumb">Skills</span>
-    <div class="chrome-actions">
-      <label class="chrome-search" aria-label="Search skills">
-        <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <circle cx="7" cy="7" r="4.5" stroke="currentColor" stroke-width="1.4"/>
-          <path d="M13.5 13.5 10.5 10.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-        </svg>
-        <input id="skill-search" type="search" placeholder="Search skills..." autocomplete="off" />
-      </label>
-    </div>
   </div>
 </div>
 
@@ -673,7 +619,7 @@
   <section class="skill-card" aria-labelledby="hero-title">
     <div class="skill-top">
       <span class="skill-badge">Skills Store</span>
-      <span class="skill-meta">By <a href="https://jackboutchard.com">Jack Boutchard</a> · Exalt Growth</span>
+      <span class="skill-meta">By <a href="https://www.exaltgrowth.com/authors/jack-boutchard">Jack Boutchard</a> · <a href="https://www.exaltgrowth.com/">Exalt Growth</a></span>
     </div>
     <h1 class="skill-name" id="hero-title">SEO Skills for Claude</h1>
     <p class="skill-description">
@@ -700,7 +646,7 @@
     <div class="skills-grid" id="skills-grid">
       <!-- Skill cards injected by script -->
     </div>
-    <div class="empty-state" id="empty-state">No skills match your search.</div>
+    <div class="empty-state" id="empty-state">No skills in this category.</div>
   </section>
 
 </main>
@@ -858,12 +804,10 @@
 
     const grid = document.getElementById('skills-grid');
     const filterBar = document.getElementById('filter-bar');
-    const searchInput = document.getElementById('skill-search');
     const emptyState = document.getElementById('empty-state');
     const fmCount = document.getElementById('fm-count');
 
     let activeCategory = 'All';
-    let searchQuery = '';
 
     // Update hero count
     fmCount.textContent = skills.length + ' available';
@@ -942,9 +886,8 @@
       });
     }
 
-    // Apply filters and search
+    // Apply filters
     function applyFilters() {
-      const q = searchQuery.trim().toLowerCase();
       let visibleCount = 0;
 
       grid.querySelectorAll('.card').forEach(card => {
@@ -952,19 +895,7 @@
         const skill = skills.find(s => s.id === id);
         if (!skill) return;
 
-        const matchesCategory = activeCategory === 'All' || skill.category === activeCategory;
-
-        let matchesSearch = true;
-        if (q) {
-          const haystack = (
-            skill.name + ' ' +
-            skill.description + ' ' +
-            skill.triggers.join(' ')
-          ).toLowerCase();
-          matchesSearch = haystack.indexOf(q) !== -1;
-        }
-
-        const visible = matchesCategory && matchesSearch;
+        const visible = activeCategory === 'All' || skill.category === activeCategory;
         card.classList.toggle('is-hidden', !visible);
         if (visible) visibleCount++;
       });
@@ -1006,12 +937,6 @@
         setTimeout(() => { label.textContent = originalLabel; }, 1600);
       }
     }
-
-    // Wire search
-    searchInput.addEventListener('input', (e) => {
-      searchQuery = e.target.value;
-      applyFilters();
-    });
 
     // Set updated month dynamically
     const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];

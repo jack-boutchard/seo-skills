@@ -565,7 +565,6 @@
   <section class="skill-card" aria-labelledby="hero-title">
     <div class="skill-top">
       <span class="skill-badge">Skills Store</span>
-      <span class="skill-meta">By <a href="https://www.exaltgrowth.com/authors/jack-boutchard">Jack Boutchard</a> · <a href="https://www.exaltgrowth.com/">Exalt Growth</a></span>
     </div>
     <h1 class="skill-name" id="hero-title">SEO Skills for Claude</h1>
     <p class="skill-description">
@@ -573,14 +572,14 @@
     </p>
 
     <div class="frontmatter">
-      <div class="fm-key">skills</div>
-      <div class="fm-val" id="fm-count">12 available</div>
-      <div class="fm-key">author</div>
-      <div class="fm-val">Jack Boutchard</div>
-      <div class="fm-key">source</div>
+      <div class="fm-key">Skills</div>
+      <div class="fm-val" id="fm-count">2 available</div>
+      <div class="fm-key">Author</div>
+      <div class="fm-val"><a href="https://www.exaltgrowth.com/authors/jack-boutchard">Jack Boutchard</a></div>
+      <div class="fm-key">Source</div>
       <div class="fm-val"><a href="https://www.exaltgrowth.com">exaltgrowth.com</a></div>
-      <div class="fm-key">updated</div>
-      <div class="fm-val" id="fm-updated">May 2026</div>
+      <div class="fm-key">Last Updated</div>
+      <div class="fm-val" id="fm-updated">June 3, 2026</div>
     </div>
   </section>
 
@@ -725,11 +724,6 @@
 
       emptyState.classList.toggle('is-visible', visibleCount === 0);
     }
-
-    // Set updated month dynamically
-    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-    const now = new Date();
-    document.getElementById('fm-updated').textContent = months[now.getMonth()] + ' ' + now.getFullYear();
 
     // Initial render
     renderFilters();

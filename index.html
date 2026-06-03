@@ -85,21 +85,10 @@
       "@type": "ItemList",
       "@id": "https://seo-skills.md/#itemlist",
       "name": "SEO Skills for Claude",
-      "numberOfItems": 13,
+      "numberOfItems": 2,
       "itemListElement": [
-        { "@type": "ListItem", "position": 1,  "name": "Entity Map",               "url": "https://entitymap.md/" },
-        { "@type": "ListItem", "position": 2,  "name": "SEO Methodology",          "url": "https://seo-methodology.md/" },
-        { "@type": "ListItem", "position": 3,  "name": "Content Brief Generator",  "url": "#" },
-        { "@type": "ListItem", "position": 4,  "name": "SEO Analysis",             "url": "#" },
-        { "@type": "ListItem", "position": 5,  "name": "Agency Article Writer",    "url": "#" },
-        { "@type": "ListItem", "position": 6,  "name": "Transactional Page Creator","url": "#" },
-        { "@type": "ListItem", "position": 7,  "name": "AEO Content Auditor",      "url": "#" },
-        { "@type": "ListItem", "position": 8,  "name": "AEO Content Optimizer",    "url": "#" },
-        { "@type": "ListItem", "position": 9,  "name": "Prospect Research",        "url": "#" },
-        { "@type": "ListItem", "position": 10, "name": "Ontology Generator",       "url": "#" },
-        { "@type": "ListItem", "position": 11, "name": "LLM Info Page",            "url": "#" },
-        { "@type": "ListItem", "position": 12, "name": "Reddit Engagement",        "url": "#" },
-        { "@type": "ListItem", "position": 13, "name": "InfraNodus",               "url": "#" }
+        { "@type": "ListItem", "position": 1, "name": "Entity Map Builder", "url": "https://entitymap.md/" },
+        { "@type": "ListItem", "position": 2, "name": "SEO Methodology",    "url": "https://seo-methodology.md/" }
       ]
     }
   ]
@@ -492,45 +481,6 @@
     gap: 8px;
   }
 
-  /* Reuse chrome-btn pattern for Copy */
-  .card-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-    font-family: 'Inter', sans-serif;
-    font-size: 12.5px;
-    font-weight: 500;
-    color: var(--text);
-    height: 32px;
-    padding: 0 14px;
-    border: 1px solid var(--border-strong);
-    border-radius: 999px;
-    background: var(--bg-card);
-    cursor: pointer;
-    transition: background 0.12s ease, border-color 0.12s ease, color 0.12s ease;
-    line-height: 1;
-  }
-  .card-btn:hover {
-    background: var(--bg-subtle);
-    border-color: var(--text-soft);
-  }
-  .card-btn:active { background: var(--bg-code); }
-  .card-btn:focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 2px;
-  }
-  .card-btn svg {
-    width: 12px;
-    height: 12px;
-    flex-shrink: 0;
-  }
-  .card-btn.is-success {
-    background: #E8F0E4;
-    border-color: #B8CFAE;
-    color: #4A6B3D;
-  }
-
   .card-link {
     margin-left: auto;
     font-family: 'Inter', sans-serif;
@@ -547,11 +497,6 @@
     outline-offset: 2px;
     border-radius: 4px;
   }
-  .card-link.is-disabled {
-    color: var(--text-soft);
-    cursor: not-allowed;
-  }
-  .card-link.is-disabled:hover { color: var(--text-soft); }
 
   /* Empty state */
   .empty-state {
@@ -664,8 +609,8 @@
 <script id="skills-data" type="application/json">
 [
   {
-    "id": "entity-map",
-    "name": "Entity Map",
+    "id": "entitymap-builder",
+    "name": "Entity Map Builder",
     "description": "Map the entities, relationships, and topical coverage that define a brand's knowledge graph footprint.",
     "category": "Technical",
     "tier": "Free",
@@ -684,127 +629,6 @@
     "author": "Jack Boutchard",
     "url": "https://seo-methodology.md/",
     "source_url": "https://www.exaltgrowth.com/methodology"
-  },
-  {
-    "id": "content-brief-generator",
-    "name": "Content Brief Generator",
-    "description": "Generate structured SEO content briefs from a target keyword using SERP analysis and InfraNodus.",
-    "category": "Content",
-    "tier": "Free",
-    "triggers": ["content brief", "keyword brief", "SERP analysis", "content planning"],
-    "author": "Jack Boutchard",
-    "url": "#",
-    "source_url": "https://www.exaltgrowth.com"
-  },
-  {
-    "id": "seo-analysis",
-    "name": "SEO Analysis",
-    "description": "Comprehensive SEO analysis covering keyword research, content gaps, and search intent classification.",
-    "category": "Research",
-    "tier": "Free",
-    "triggers": ["keyword research", "content gaps", "search intent", "SEO audit"],
-    "author": "Jack Boutchard",
-    "url": "#",
-    "source_url": "https://www.exaltgrowth.com"
-  },
-  {
-    "id": "agency-article-writer",
-    "name": "Agency Article Writer",
-    "description": "Write SEO-optimized thought leadership articles for B2B SaaS blogs with InfraNodus research backing.",
-    "category": "Content",
-    "tier": "Pro",
-    "triggers": ["article writing", "thought leadership", "B2B SaaS blog", "long-form content"],
-    "author": "Jack Boutchard",
-    "url": "#",
-    "source_url": "https://www.exaltgrowth.com"
-  },
-  {
-    "id": "transactional-page-creator",
-    "name": "Transactional Page Creator",
-    "description": "Research, brief, and build high-intent transactional pages with schema markup and brand colors.",
-    "category": "Content",
-    "tier": "Pro",
-    "triggers": ["transactional pages", "landing pages", "schema markup", "high-intent content"],
-    "author": "Jack Boutchard",
-    "url": "#",
-    "source_url": "https://www.exaltgrowth.com"
-  },
-  {
-    "id": "aeo-content-auditor",
-    "name": "AEO Content Auditor",
-    "description": "Audit any URL for AI citation potential using a 10-point AEO rubric with Firecrawl and Ahrefs data.",
-    "category": "GEO",
-    "tier": "Pro",
-    "triggers": ["AEO audit", "AI citation audit", "content scoring", "GEO readiness"],
-    "author": "Jack Boutchard",
-    "url": "#",
-    "source_url": "https://www.exaltgrowth.com"
-  },
-  {
-    "id": "aeo-content-optimizer",
-    "name": "AEO Content Optimizer",
-    "description": "Optimize any URL for AI engine citations with evidence-based citation hooks and FAQ sections.",
-    "category": "GEO",
-    "tier": "Pro",
-    "triggers": ["AEO optimization", "citation hooks", "FAQ optimization", "AI search"],
-    "author": "Jack Boutchard",
-    "url": "#",
-    "source_url": "https://www.exaltgrowth.com"
-  },
-  {
-    "id": "prospect-research",
-    "name": "Prospect Research",
-    "description": "Build a pre-call research brief for an Exalt Growth prospect, published to Notion.",
-    "category": "Strategy",
-    "tier": "Pro",
-    "triggers": ["prospect research", "pre-call brief", "sales research", "Notion publishing"],
-    "author": "Jack Boutchard",
-    "url": "#",
-    "source_url": "https://www.exaltgrowth.com"
-  },
-  {
-    "id": "ontology-generator",
-    "name": "Ontology Generator",
-    "description": "Generate ontological knowledge graphs in wikilinks syntax for InfraNodus visualization.",
-    "category": "Technical",
-    "tier": "Free",
-    "triggers": ["ontology", "knowledge graph", "wikilinks", "InfraNodus"],
-    "author": "Jack Boutchard",
-    "url": "#",
-    "source_url": "https://www.exaltgrowth.com"
-  },
-  {
-    "id": "llm-info-page",
-    "name": "LLM Info Page",
-    "description": "Build a SaaS LLM info page optimized for citation by ChatGPT, Claude, Perplexity, and Gemini.",
-    "category": "GEO",
-    "tier": "Pro",
-    "triggers": ["LLM info page", "AI citation page", "llms.txt", "info page"],
-    "author": "Jack Boutchard",
-    "url": "#",
-    "source_url": "https://www.exaltgrowth.com"
-  },
-  {
-    "id": "reddit-engagement",
-    "name": "Reddit Engagement",
-    "description": "Daily Reddit thread discovery and comment drafting for trust-building engagement.",
-    "category": "Automation",
-    "tier": "Pro",
-    "triggers": ["Reddit", "community engagement", "thread discovery", "comment drafting"],
-    "author": "Jack Boutchard",
-    "url": "#",
-    "source_url": "https://www.exaltgrowth.com"
-  },
-  {
-    "id": "infranodus",
-    "name": "InfraNodus",
-    "description": "Text network analysis, knowledge graphs, content gap detection, and SEO optimization via InfraNodus MCP.",
-    "category": "Research",
-    "tier": "Free",
-    "triggers": ["text network", "knowledge graph", "content gaps", "InfraNodus MCP"],
-    "author": "Jack Boutchard",
-    "url": "#",
-    "source_url": "https://infranodus.com"
   }
 ]
 </script>
@@ -865,10 +689,8 @@
           ? '<span class="tier-pill ' + tierClass + '">' + escapeHtml(skill.tier) + '</span>'
           : '';
         const triggers = skill.triggers.join(' · ');
-        const isLive = skill.url && skill.url !== '#';
-        const viewLink = isLive
-          ? '<a class="card-link" href="' + escapeHtml(skill.url) + '" aria-label="View ' + escapeHtml(skill.name) + ' skill">View Skill &rarr;</a>'
-          : '<a class="card-link is-disabled" href="#" title="Coming soon" aria-label="' + escapeHtml(skill.name) + ' coming soon" onclick="event.preventDefault();">View Skill &rarr;</a>';
+        const skillHref = skill.url + (skill.url.indexOf('?') === -1 ? '?seo-skillsmd' : '&seo-skillsmd');
+        const viewLink = '<a class="card-link" href="' + escapeHtml(skillHref) + '" aria-label="View ' + escapeHtml(skill.name) + ' skill">View Skill &rarr;</a>';
 
         return ''
           + '<article class="card" data-category="' + escapeHtml(skill.category) + '" data-id="' + escapeHtml(skill.id) + '">'
@@ -881,21 +703,10 @@
           +   '<p class="card-description">' + escapeHtml(skill.description) + '</p>'
           +   '<div class="card-triggers"><span class="triggers-label">triggers:</span> ' + escapeHtml(triggers) + '</div>'
           +   '<div class="card-actions">'
-          +     '<button type="button" class="card-btn copy-btn" data-id="' + escapeHtml(skill.id) + '" aria-label="Copy ' + escapeHtml(skill.name) + ' skill to clipboard">'
-          +       '<svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">'
-          +         '<rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.4"/>'
-          +         '<path d="M11 5V3.5A1.5 1.5 0 0 0 9.5 2h-6A1.5 1.5 0 0 0 2 3.5v6A1.5 1.5 0 0 0 3.5 11H5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>'
-          +       '</svg>'
-          +       '<span>Copy</span>'
-          +     '</button>'
           +     viewLink
           +   '</div>'
           + '</article>';
       }).join('');
-
-      grid.querySelectorAll('.copy-btn').forEach(btn => {
-        btn.addEventListener('click', () => handleCopy(btn));
-      });
     }
 
     // Apply filters
@@ -913,41 +724,6 @@
       });
 
       emptyState.classList.toggle('is-visible', visibleCount === 0);
-    }
-
-    // Copy handler
-    async function handleCopy(btn) {
-      const id = btn.dataset.id;
-      const skill = skills.find(s => s.id === id);
-      if (!skill) return;
-
-      const label = btn.querySelector('span');
-      const originalLabel = label.textContent;
-      const payload = 'Skill: ' + skill.name + '\nSee: ' + skill.url;
-
-      try {
-        if (navigator.clipboard && window.isSecureContext) {
-          await navigator.clipboard.writeText(payload);
-        } else {
-          const ta = document.createElement('textarea');
-          ta.value = payload;
-          ta.style.position = 'fixed';
-          ta.style.opacity = '0';
-          document.body.appendChild(ta);
-          ta.select();
-          document.execCommand('copy');
-          document.body.removeChild(ta);
-        }
-        btn.classList.add('is-success');
-        label.textContent = 'Copied';
-        setTimeout(() => {
-          btn.classList.remove('is-success');
-          label.textContent = originalLabel;
-        }, 1600);
-      } catch (err) {
-        label.textContent = 'Failed';
-        setTimeout(() => { label.textContent = originalLabel; }, 1600);
-      }
     }
 
     // Set updated month dynamically

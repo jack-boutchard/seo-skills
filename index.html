@@ -579,7 +579,7 @@
       <div class="fm-key">Source</div>
       <div class="fm-val"><a href="https://www.exaltgrowth.com">exaltgrowth.com</a></div>
       <div class="fm-key">Last Updated</div>
-      <div class="fm-val" id="fm-updated">June 3, 2026</div>
+      <div class="fm-val" id="fm-updated"></div>
     </div>
   </section>
 
@@ -724,6 +724,11 @@
 
       emptyState.classList.toggle('is-visible', visibleCount === 0);
     }
+
+    // Set Last Updated to the visitor's current date
+    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    const now = new Date();
+    document.getElementById('fm-updated').textContent = months[now.getMonth()] + ' ' + now.getDate() + ', ' + now.getFullYear();
 
     // Initial render
     renderFilters();

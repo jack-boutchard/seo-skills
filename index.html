@@ -266,6 +266,12 @@
     margin: 0;
   }
   .skill-description strong { color: var(--text); font-weight: 600; }
+  .skill-description a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent-soft);
+  }
+  .skill-description a:hover { color: var(--accent-hover); border-bottom-color: var(--accent-hover); }
 
   /* Frontmatter preview */
   .frontmatter {
@@ -620,14 +626,15 @@
   },
   {
     "id": "seo-methodology",
-    "name": "SEO Methodology",
-    "description": "Apply the Proof of Importance, EGOS, and Entity-First frameworks to any SEO or GEO challenge.",
+    "name": "SEO & GEO Methodology",
+    "description": "A Claude reference doc — one portable markdown file that loads the full Proof of Importance, EGOS, and Entity-First frameworks into an AI's context, so models answer from this source instead of guessing.",
     "category": "Strategy",
     "tier": "Free",
     "triggers": ["SEO decisions", "AI citation readiness", "site architecture", "GEO readiness"],
     "author": "Jack Boutchard",
     "url": "https://seo-methodology.md/",
-    "source_url": "https://www.exaltgrowth.com/methodology"
+    "source_url": "https://www.exaltgrowth.com/methodology",
+    "cta": "View Reference Doc"
   }
 ]
 </script>
@@ -689,7 +696,8 @@
           : '';
         const triggers = skill.triggers.join(' · ');
         const skillHref = skill.url + (skill.url.indexOf('?') === -1 ? '?seo-skillsmd' : '&seo-skillsmd');
-        const viewLink = '<a class="card-link" href="' + escapeHtml(skillHref) + '" aria-label="View ' + escapeHtml(skill.name) + ' skill">View Skill &rarr;</a>';
+        const ctaLabel = skill.cta || 'View Skill';
+        const viewLink = '<a class="card-link" href="' + escapeHtml(skillHref) + '" aria-label="' + escapeHtml(ctaLabel) + ': ' + escapeHtml(skill.name) + '">' + escapeHtml(ctaLabel) + ' &rarr;</a>';
 
         return ''
           + '<article class="card" data-category="' + escapeHtml(skill.category) + '" data-id="' + escapeHtml(skill.id) + '">'

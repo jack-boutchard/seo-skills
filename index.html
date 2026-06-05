@@ -368,7 +368,7 @@
   }
   @media (max-width: 720px) {
     .skills-grid {
-      grid-template-columns: 1fr;
+      grid-template-columns: minmax(0, 1fr);
       gap: 12px;
     }
   }
@@ -376,6 +376,7 @@
   /* ---------- Skill card ---------- */
   .card {
     position: relative;
+    min-width: 0;
     background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: var(--radius-lg);

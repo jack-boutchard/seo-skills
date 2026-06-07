@@ -588,8 +588,6 @@
     </p>
 
     <div class="frontmatter">
-      <div class="fm-key">Skills</div>
-      <div class="fm-val" id="fm-count">2 available</div>
       <div class="fm-key">Author</div>
       <div class="fm-val"><a href="https://www.exaltgrowth.com/authors/jack-boutchard">Jack Boutchard</a></div>
       <div class="fm-key">Source</div>
@@ -668,12 +666,8 @@
     const grid = document.getElementById('skills-grid');
     const filterBar = document.getElementById('filter-bar');
     const emptyState = document.getElementById('empty-state');
-    const fmCount = document.getElementById('fm-count');
 
     let activeCategory = 'All';
-
-    // Update hero count
-    fmCount.textContent = skills.length + ' available';
 
     // Render filter pills
     function renderFilters() {

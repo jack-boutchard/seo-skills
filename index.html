@@ -400,6 +400,11 @@
     gap: 8px;
     margin-bottom: 14px;
   }
+  .category-pills {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
   .category-pill {
     display: inline-flex;
     align-items: center;
@@ -648,7 +653,7 @@
     "id": "entitymap-builder",
     "name": "Entity Map Builder",
     "description": "Map the entities, relationships, and topical coverage that define a brand's knowledge graph footprint.",
-    "category": "GEO",
+    "category": ["Technical", "GEO"],
     "tier": "Free",
     "triggers": ["entity mapping", "knowledge graph", "entity-first SEO", "topical authority"],
     "author": "Jack Boutchard",
@@ -672,7 +677,7 @@
     // Render filter pills
     function renderFilters() {
       const counts = categories.reduce((acc, cat) => {
-        acc[cat] = cat === 'All' ? skills.length : skills.filter(s => s.category === cat).length;
+        acc[cat] = cat === 'All' ? skills.length : skills.filter(s => [].concat(s.category).indexOf(cat) !== -1).length;
         return acc;
       }, {});
 
@@ -710,6 +715,8 @@
           ? '<span class="tier-pill ' + tierClass + '">' + escapeHtml(skill.tier) + '</span>'
           : '';
         const triggers = skill.triggers.join(' · ');
+        const cats = [].concat(skill.category);
+        const categoryPills = cats.map(c => '<span class="category-pill">' + escapeHtml(c) + '</span>').join('');
         // External skill domains get a referral marker; internal seo-skills.md pages don't.
         const isInternal = skill.url.indexOf('seo-skills.md') !== -1;
         const skillHref = isInternal
@@ -719,9 +726,9 @@
         const viewLink = '<a class="card-link" href="' + escapeHtml(skillHref) + '" aria-label="' + escapeHtml(ctaLabel) + ': ' + escapeHtml(skill.name) + '">' + escapeHtml(ctaLabel) + ' &rarr;</a>';
 
         return ''
-          + '<article class="card" data-category="' + escapeHtml(skill.category) + '" data-id="' + escapeHtml(skill.id) + '">'
+          + '<article class="card" data-category="' + escapeHtml(cats.join(' ')) + '" data-id="' + escapeHtml(skill.id) + '">'
           +   '<div class="card-top">'
-          +     '<span class="category-pill">' + escapeHtml(skill.category) + '</span>'
+          +     '<span class="category-pills">' + categoryPills + '</span>'
           +     tierPill
           +   '</div>'
           +   '<div class="card-name-tech">' + escapeHtml(skill.id) + '</div>'
@@ -744,7 +751,7 @@
         const skill = skills.find(s => s.id === id);
         if (!skill) return;
 
-        const visible = activeCategory === 'All' || skill.category === activeCategory;
+        const visible = activeCategory === 'All' || [].concat(skill.category).indexOf(activeCategory) !== -1;
         card.classList.toggle('is-hidden', !visible);
         if (visible) visibleCount++;
       });

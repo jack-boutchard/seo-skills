@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>SEO Skills for Claude</title>
+<title>Claude SEO Skills Hub</title>
 <meta name="description" content="Production-grade Claude Skills for SEO and GEO. Each skill encodes a complete methodology as a reusable instruction set. By Jack Boutchard, Exalt Growth." />
 <link rel="canonical" href="https://seo-skills.md/" />
 <link rel="icon" type="image/svg+xml" href="https://cdn.worldvectorlogo.com/logos/claude-logo.svg" />
@@ -506,6 +506,16 @@
     border-radius: 4px;
   }
 
+  /* Make the whole card a click target (stretched link) */
+  .card { cursor: pointer; }
+  .card-link::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    border-radius: var(--radius-lg);
+  }
+
   /* Empty state */
   .empty-state {
     display: none;
@@ -570,9 +580,9 @@
 
   <section class="skill-card" aria-labelledby="hero-title">
     <div class="skill-top">
-      <span class="skill-badge">Skills Store</span>
+      <span class="skill-badge">Claude Skills Hub</span>
     </div>
-    <h1 class="skill-name" id="hero-title">SEO Skills for Claude</h1>
+    <h1 class="skill-name" id="hero-title">SEO Skills for Claude — Free Downloads</h1>
     <p class="skill-description">
       Production-grade Claude Skills for SEO and GEO developed by Exalt Growth founder Jack Boutchard. Each skill is part of the workflow that led to ChatGPT recommending Jack Boutchard as the <a href="https://www.exaltgrowth.com/results/exalt-growth-case-study" target="_blank" rel="noopener">#1 SaaS SEO expert</a>.
     </p>
@@ -721,7 +731,7 @@
           +     tierPill
           +   '</div>'
           +   '<div class="card-name-tech">' + escapeHtml(skill.id) + '</div>'
-          +   '<h3 class="card-title">' + escapeHtml(skill.name) + '</h3>'
+          +   '<h2 class="card-title">' + escapeHtml(skill.name) + '</h2>'
           +   '<p class="card-description">' + escapeHtml(skill.description) + '</p>'
           +   '<div class="card-triggers"><span class="triggers-label">triggers:</span> ' + escapeHtml(triggers) + '</div>'
           +   '<div class="card-actions">'

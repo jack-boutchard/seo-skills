@@ -89,7 +89,7 @@
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Entity Map Builder",         "url": "https://entitymap.md/" },
         { "@type": "ListItem", "position": 2, "name": "SEO Methodology",             "url": "https://seo-methodology.md/" },
-        { "@type": "ListItem", "position": 3, "name": "Citation Readiness Audit (KG)", "url": "https://seo-skills.md/citation-readiness-audit" }
+        { "@type": "ListItem", "position": 3, "name": "Citation Readiness Audit", "url": "https://seo-skills.md/citation-readiness-audit" }
       ]
     }
   ]
@@ -637,8 +637,8 @@
     "cta": "View Reference Doc"
   },
   {
-    "id": "citation-readiness-audit-kg",
-    "name": "Citation Readiness Audit (KG)",
+    "id": "citation-readiness-audit",
+    "name": "Citation Readiness Audit",
     "description": "Audit whether content contains extractable atomic claims an LLM would cite, whether those claims are unique to the source, and whether structural coherence supports clean retrieval. Mapped to Proof of Importance.",
     "category": "GEO",
     "tier": "Free",
@@ -706,7 +706,11 @@
           ? '<span class="tier-pill ' + tierClass + '">' + escapeHtml(skill.tier) + '</span>'
           : '';
         const triggers = skill.triggers.join(' · ');
-        const skillHref = skill.url + (skill.url.indexOf('?') === -1 ? '?seo-skillsmd' : '&seo-skillsmd');
+        // External skill domains get a referral marker; internal seo-skills.md pages don't.
+        const isInternal = skill.url.indexOf('seo-skills.md') !== -1;
+        const skillHref = isInternal
+          ? skill.url
+          : skill.url + (skill.url.indexOf('?') === -1 ? '?seo-skillsmd' : '&seo-skillsmd');
         const ctaLabel = skill.cta || 'View Skill';
         const viewLink = '<a class="card-link" href="' + escapeHtml(skillHref) + '" aria-label="' + escapeHtml(ctaLabel) + ': ' + escapeHtml(skill.name) + '">' + escapeHtml(ctaLabel) + ' &rarr;</a>';
 

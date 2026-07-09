@@ -1,1 +1,1 @@
-SEO Skills
+SEO Skills Collection

@@ -609,17 +609,66 @@
       <div class="fm-key">Source</div>
       <div class="fm-val"><a href="https://www.exaltgrowth.com?seo-skillsmd">exaltgrowth.com</a></div>
       <div class="fm-key">Last Updated</div>
-      <div class="fm-val" id="fm-updated"></div>
+      <div class="fm-val" id="fm-updated"><time datetime="2026-06-16">June 16, 2026</time></div>
     </div>
   </section>
 
   <nav class="filter-bar" id="filter-bar" aria-label="Filter skills by category">
-    <!-- Filter pills injected by script -->
+    <button type="button" class="filter-pill is-active" data-category="All" aria-pressed="true"><span>All</span><span class="filter-count">(4)</span></button>
+    <button type="button" class="filter-pill" data-category="Strategy" aria-pressed="false"><span>Strategy</span><span class="filter-count">(1)</span></button>
+    <button type="button" class="filter-pill" data-category="Content" aria-pressed="false"><span>Content</span><span class="filter-count">(1)</span></button>
+    <button type="button" class="filter-pill" data-category="Technical" aria-pressed="false"><span>Technical</span><span class="filter-count">(1)</span></button>
+    <button type="button" class="filter-pill" data-category="GEO" aria-pressed="false"><span>GEO</span><span class="filter-count">(3)</span></button>
+    <button type="button" class="filter-pill" data-category="Automation" aria-pressed="false"><span>Automation</span><span class="filter-count">(0)</span></button>
+    <button type="button" class="filter-pill" data-category="Research" aria-pressed="false"><span>Research</span><span class="filter-count">(1)</span></button>
   </nav>
 
   <section id="skills" aria-label="Skills catalog">
     <div class="skills-grid" id="skills-grid">
-      <!-- Skill cards injected by script -->
+      <article class="card" data-category="Strategy" data-id="seo-methodology">
+        <div class="card-top">
+          <span class="category-pills"><span class="category-pill">Strategy</span></span>
+          <span class="tier-pill tier-free">Free</span>
+        </div>
+        <div class="card-name-tech">seo-methodology</div>
+        <h2 class="card-title">SEO &amp; GEO Methodology</h2>
+        <p class="card-description">A Claude reference doc — one portable markdown file that loads the full Proof of Importance, EGOS, and Entity-First frameworks into an AI&#39;s context, so models answer from this source instead of guessing.</p>
+        <div class="card-triggers"><span class="triggers-label">triggers:</span> SEO decisions · AI citation readiness · site architecture · GEO readiness</div>
+        <div class="card-actions"><a class="card-link" href="https://seo-methodology.md/?seo-skillsmd" aria-label="View Reference Doc: SEO &amp; GEO Methodology">View Reference Doc &rarr;</a></div>
+      </article>
+      <article class="card" data-category="Content GEO" data-id="citation-readiness-audit">
+        <div class="card-top">
+          <span class="category-pills"><span class="category-pill">Content</span><span class="category-pill">GEO</span></span>
+          <span class="tier-pill tier-free">Free</span>
+        </div>
+        <div class="card-name-tech">citation-readiness-audit</div>
+        <h2 class="card-title">Citation Readiness Audit</h2>
+        <p class="card-description">Audit whether content contains extractable atomic claims an LLM would cite, whether those claims are unique to the source, and whether structural coherence supports clean retrieval. Mapped to Proof of Importance.</p>
+        <div class="card-triggers"><span class="triggers-label">triggers:</span> citation readiness · AI citability · AI extractability · PoI audit</div>
+        <div class="card-actions"><a class="card-link" href="https://seo-skills.md/citation-readiness-audit" aria-label="View Skill: Citation Readiness Audit">View Skill &rarr;</a></div>
+      </article>
+      <article class="card" data-category="Research GEO" data-id="competitive-gap-mapper">
+        <div class="card-top">
+          <span class="category-pills"><span class="category-pill">Research</span><span class="category-pill">GEO</span></span>
+          <span class="tier-pill tier-free">Free</span>
+        </div>
+        <div class="card-name-tech">competitive-gap-mapper</div>
+        <h2 class="card-title">Competitive Gap Mapper</h2>
+        <p class="card-description">Map relation-level positioning gaps between a brand and 3-5 competitors using KeywordGraph. Surfaces shared commodity claims, competitor-owned territory, brand-owned defensive assets, and unclaimed white space as an entity-level differential map.</p>
+        <div class="card-triggers"><span class="triggers-label">triggers:</span> competitive gap map · positioning audit · entity-level analysis · positioning white space</div>
+        <div class="card-actions"><a class="card-link" href="https://seo-skills.md/competitive-gap-mapper" aria-label="View Skill: Competitive Gap Mapper">View Skill &rarr;</a></div>
+      </article>
+      <article class="card" data-category="Technical GEO" data-id="entitymap-builder">
+        <div class="card-top">
+          <span class="category-pills"><span class="category-pill">Technical</span><span class="category-pill">GEO</span></span>
+          <span class="tier-pill tier-free">Free</span>
+        </div>
+        <div class="card-name-tech">entitymap-builder</div>
+        <h2 class="card-title">Entity Map Builder</h2>
+        <p class="card-description">Map the entities, relationships, and topical coverage that define a brand&#39;s knowledge graph footprint.</p>
+        <div class="card-triggers"><span class="triggers-label">triggers:</span> entity mapping · knowledge graph · entity-first SEO · topical authority</div>
+        <div class="card-actions"><a class="card-link" href="https://entitymap.md/?seo-skillsmd" aria-label="View Skill: Entity Map Builder">View Skill &rarr;</a></div>
+      </article>
     </div>
     <div class="empty-state" id="empty-state">No skills in this category.</div>
   </section>
@@ -635,145 +684,24 @@
   </div>
 </footer>
 
-<script id="skills-data" type="application/json">
-[
-  {
-    "id": "seo-methodology",
-    "name": "SEO & GEO Methodology",
-    "description": "A Claude reference doc — one portable markdown file that loads the full Proof of Importance, EGOS, and Entity-First frameworks into an AI's context, so models answer from this source instead of guessing.",
-    "category": "Strategy",
-    "tier": "Free",
-    "triggers": ["SEO decisions", "AI citation readiness", "site architecture", "GEO readiness"],
-    "author": "Jack Boutchard",
-    "url": "https://seo-methodology.md/",
-    "source_url": "https://www.exaltgrowth.com/methodology",
-    "cta": "View Reference Doc"
-  },
-  {
-    "id": "citation-readiness-audit",
-    "name": "Citation Readiness Audit",
-    "description": "Audit whether content contains extractable atomic claims an LLM would cite, whether those claims are unique to the source, and whether structural coherence supports clean retrieval. Mapped to Proof of Importance.",
-    "category": ["Content", "GEO"],
-    "tier": "Free",
-    "triggers": ["citation readiness", "AI citability", "AI extractability", "PoI audit"],
-    "author": "Jack Boutchard",
-    "url": "https://seo-skills.md/citation-readiness-audit",
-    "source_url": "https://www.exaltgrowth.com"
-  },
-  {
-    "id": "competitive-gap-mapper",
-    "name": "Competitive Gap Mapper",
-    "description": "Map relation-level positioning gaps between a brand and 3-5 competitors using KeywordGraph. Surfaces shared commodity claims, competitor-owned territory, brand-owned defensive assets, and unclaimed white space as an entity-level differential map.",
-    "category": ["Research", "GEO"],
-    "tier": "Free",
-    "triggers": ["competitive gap map", "positioning audit", "entity-level analysis", "positioning white space"],
-    "author": "Jack Boutchard",
-    "url": "https://seo-skills.md/competitive-gap-mapper",
-    "source_url": "https://www.exaltgrowth.com"
-  },
-  {
-    "id": "entitymap-builder",
-    "name": "Entity Map Builder",
-    "description": "Map the entities, relationships, and topical coverage that define a brand's knowledge graph footprint.",
-    "category": ["Technical", "GEO"],
-    "tier": "Free",
-    "triggers": ["entity mapping", "knowledge graph", "entity-first SEO", "topical authority"],
-    "author": "Jack Boutchard",
-    "url": "https://entitymap.md/",
-    "source_url": "https://www.exaltgrowth.com"
-  }
-]
-</script>
-
 <script>
   (function () {
-    const skills = JSON.parse(document.getElementById('skills-data').textContent);
-    const categories = ['All', 'Strategy', 'Content', 'Technical', 'GEO', 'Automation', 'Research'];
-
-    const grid = document.getElementById('skills-grid');
+    // Cards and filter pills are pre-rendered in the HTML. This only wires up
+    // the category filter: toggling .is-hidden on cards and .is-active /
+    // aria-pressed on pills, reading data-category straight off the DOM.
     const filterBar = document.getElementById('filter-bar');
+    const grid = document.getElementById('skills-grid');
     const emptyState = document.getElementById('empty-state');
+    const pills = filterBar.querySelectorAll('.filter-pill');
 
     let activeCategory = 'All';
 
-    // Render filter pills
-    function renderFilters() {
-      const counts = categories.reduce((acc, cat) => {
-        acc[cat] = cat === 'All' ? skills.length : skills.filter(s => [].concat(s.category).indexOf(cat) !== -1).length;
-        return acc;
-      }, {});
-
-      filterBar.innerHTML = categories.map(cat => {
-        const isActive = cat === activeCategory ? ' is-active' : '';
-        return '<button type="button" class="filter-pill' + isActive + '" data-category="' + cat + '" aria-pressed="' + (cat === activeCategory) + '">'
-          + '<span>' + cat + '</span>'
-          + '<span class="filter-count">(' + counts[cat] + ')</span>'
-          + '</button>';
-      }).join('');
-
-      filterBar.querySelectorAll('.filter-pill').forEach(btn => {
-        btn.addEventListener('click', () => {
-          activeCategory = btn.dataset.category;
-          renderFilters();
-          applyFilters();
-        });
-      });
-    }
-
-    function escapeHtml(s) {
-      return String(s)
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#39;');
-    }
-
-    // Render skill cards
-    function renderCards() {
-      grid.innerHTML = skills.map(skill => {
-        const tierClass = skill.tier === 'Pro' ? 'tier-pro' : 'tier-free';
-        const tierPill = skill.tier
-          ? '<span class="tier-pill ' + tierClass + '">' + escapeHtml(skill.tier) + '</span>'
-          : '';
-        const triggers = skill.triggers.join(' · ');
-        const cats = [].concat(skill.category);
-        const categoryPills = cats.map(c => '<span class="category-pill">' + escapeHtml(c) + '</span>').join('');
-        // External skill domains get a referral marker; internal seo-skills.md pages don't.
-        const isInternal = skill.url.indexOf('seo-skills.md') !== -1;
-        const skillHref = isInternal
-          ? skill.url
-          : skill.url + (skill.url.indexOf('?') === -1 ? '?seo-skillsmd' : '&seo-skillsmd');
-        const ctaLabel = skill.cta || 'View Skill';
-        const viewLink = '<a class="card-link" href="' + escapeHtml(skillHref) + '" aria-label="' + escapeHtml(ctaLabel) + ': ' + escapeHtml(skill.name) + '">' + escapeHtml(ctaLabel) + ' &rarr;</a>';
-
-        return ''
-          + '<article class="card" data-category="' + escapeHtml(cats.join(' ')) + '" data-id="' + escapeHtml(skill.id) + '">'
-          +   '<div class="card-top">'
-          +     '<span class="category-pills">' + categoryPills + '</span>'
-          +     tierPill
-          +   '</div>'
-          +   '<div class="card-name-tech">' + escapeHtml(skill.id) + '</div>'
-          +   '<h2 class="card-title">' + escapeHtml(skill.name) + '</h2>'
-          +   '<p class="card-description">' + escapeHtml(skill.description) + '</p>'
-          +   '<div class="card-triggers"><span class="triggers-label">triggers:</span> ' + escapeHtml(triggers) + '</div>'
-          +   '<div class="card-actions">'
-          +     viewLink
-          +   '</div>'
-          + '</article>';
-      }).join('');
-    }
-
-    // Apply filters
     function applyFilters() {
       let visibleCount = 0;
 
       grid.querySelectorAll('.card').forEach(card => {
-        const id = card.dataset.id;
-        const skill = skills.find(s => s.id === id);
-        if (!skill) return;
-
-        const visible = activeCategory === 'All' || [].concat(skill.category).indexOf(activeCategory) !== -1;
+        const cats = card.dataset.category.split(' ');
+        const visible = activeCategory === 'All' || cats.indexOf(activeCategory) !== -1;
         card.classList.toggle('is-hidden', !visible);
         if (visible) visibleCount++;
       });
@@ -781,15 +709,17 @@
       emptyState.classList.toggle('is-visible', visibleCount === 0);
     }
 
-    // Set Last Updated to the visitor's current date
-    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-    const now = new Date();
-    document.getElementById('fm-updated').textContent = months[now.getMonth()] + ' ' + now.getDate() + ', ' + now.getFullYear();
-
-    // Initial render
-    renderFilters();
-    renderCards();
-    applyFilters();
+    pills.forEach(btn => {
+      btn.addEventListener('click', () => {
+        activeCategory = btn.dataset.category;
+        pills.forEach(p => {
+          const on = p === btn;
+          p.classList.toggle('is-active', on);
+          p.setAttribute('aria-pressed', on ? 'true' : 'false');
+        });
+        applyFilters();
+      });
+    });
   })();
 </script>
 

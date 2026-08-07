@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex" />
+<title>Redirecting…</title>
+<script>
+  // GitHub Pages can't do server-side redirects, so trailing-slash URLs
+  // (e.g. /citation-readiness-audit/) 404 here and get sent to their
+  // canonical no-trailing-slash version, which is served by a real .html
+  // file (200) — so there is no redirect loop.
+  (function () {
+    var path = location.pathname;
+    if (path.length > 1 && path.charAt(path.length - 1) === '/') {
+      location.replace(path.replace(/\/+$/, '') + location.search + location.hash);
+    }
+  })();
+</script>
+<style>
+  html, body { margin: 0; height: 100%; }
+  body {
+    background: #F5F4EE;
+    color: #1F1E1C;
+    font-family: 'Source Serif 4', 'Iowan Old Style', 'Charter', Georgia, serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 24px;
+  }
+  h1 { font-size: 28px; font-weight: 600; margin: 0 0 8px; }
+  p { color: #6B6962; font-size: 15px; margin: 0 0 20px; }
+  a { color: #C96442; text-decoration: none; border-bottom: 1px solid #F2E5DC; }
+  a:hover { color: #B5573A; border-bottom-color: #B5573A; }
+</style>
+</head>
+<body>
+  <h1>Page not found</h1>
+  <p>The page you’re looking for doesn’t exist or may have moved.</p>
+  <p><a href="/">Back to SEO Skills for Claude</a></p>
+</body>
+</html>
